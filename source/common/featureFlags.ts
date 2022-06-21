@@ -53,13 +53,13 @@ export const showFeedbackMessage = "show-feedback-message";
 
 export const defaultFeatureFlags = {
     [allowlistDomainOnManualActivationFeatureFlag]: false,
-    [collectAnonymousMetricsFeatureFlag]: true,
+    [collectAnonymousMetricsFeatureFlag]: false,
     [enableBootUnclutterMessage]: false,
     [isDevelopmentFeatureFlag]: false,
-    [enableSocialCountsFeatureFlag]: true,
+    [enableSocialCountsFeatureFlag]: false,
 
     [enableAnnotationsFeatureFlag]: false,
-    [enableSocialCommentsFeatureFlag]: true,
+    [enableSocialCommentsFeatureFlag]: false,
 
     [dismissedFeedbackMessage]: false,
 };

@@ -20,40 +20,40 @@ export async function reportEvent(name: string, data = {}) {
         return;
     }
 
-    await sendEvent(name, data, isDev);
+    /* await sendEvent(name, data, isDev); */
 }
 
 async function sendEvent(name, data, isDev) {
-    try {
-        await fetch(`https://plausible.io/api/event`, {
-            method: "POST",
-            headers: {
-                "User-Agent": navigator.userAgent,
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                domain: "unclutter-extension",
-                url: `app://unclutter-extension/${isDev ? "test" : ""}`,
-                name,
-                props: data,
-            }),
-        });
-        await fetch(`https://app.posthog.com/capture`, {
-            method: "POST",
-            body: JSON.stringify({
-                api_key: "phc_BQHO9btvNLVEbFC4ihMIS8deK5T6P4d8EF75Ihvkfaw",
-                distinct_id: distinctId,
-                event: name,
-                properties: {
-                    $useragent: navigator.userAgent,
-                    isDev,
-                    ...data,
-                },
-            }),
-        });
-    } catch (err) {
-        console.error(`Error reporting metric:`, err);
-    }
+    /* try { */
+    /*     await fetch(`https://plausible.io/api/event`, { */
+    /*         method: "POST", */
+    /*         headers: { */
+    /*             "User-Agent": navigator.userAgent, */
+    /*             "Content-Type": "application/json", */
+    /*         }, */
+    /*         body: JSON.stringify({ */
+    /*             domain: "unclutter-extension", */
+    /*             url: `app://unclutter-extension/${isDev ? "test" : ""}`, */
+    /*             name, */
+    /*             props: data, */
+    /*         }), */
+    /*     }); */
+    /*     await fetch(`https://app.posthog.com/capture`, { */
+    /*         method: "POST", */
+    /*         body: JSON.stringify({ */
+    /*             api_key: "phc_BQHO9btvNLVEbFC4ihMIS8deK5T6P4d8EF75Ihvkfaw", */
+    /*             distinct_id: distinctId, */
+    /*             event: name, */
+    /*             properties: { */
+    /*                 $useragent: navigator.userAgent, */
+    /*                 isDev, */
+    /*                 ...data, */
+    /*             }, */
+    /*         }), */
+    /*     }); */
+    /* } catch (err) { */
+    /*     console.error(`Error reporting metric:`, err); */
+    /* } */
 }
 
 // Report anonymous aggregates on enabled extension features (if the user allowed it)
@@ -149,23 +149,23 @@ export async function getRemoteFeatureFlags() {
     }
 
     try {
-        const response = await fetch(`https://app.posthog.com/decide`, {
-            method: "POST",
-            body: JSON.stringify({
-                api_key: "phc_BQHO9btvNLVEbFC4ihMIS8deK5T6P4d8EF75Ihvkfaw",
-                distinct_id: distinctId,
-            }),
-        });
+        /* const response = await fetch(`https://app.posthog.com/decide`, { */
+        /*     method: "POST", */
+        /*     body: JSON.stringify({ */
+        /*         api_key: "phc_BQHO9btvNLVEbFC4ihMIS8deK5T6P4d8EF75Ihvkfaw", */
+        /*         distinct_id: distinctId, */
+        /*     }), */
+        /* }); */
 
-        const enabledFeatureFlags: string[] = (await response.json())
-            .featureFlags;
-        cachedRemoteFeatureFlags = enabledFeatureFlags.reduce(
-            (obj, flag) => ({ ...obj, [flag]: true }),
-            {}
-        );
-        lastFeatureFlagFetch = new Date();
+        /* const enabledFeatureFlags: string[] = (await response.json()) */
+        /*     .featureFlags; */
+        /* cachedRemoteFeatureFlags = enabledFeatureFlags.reduce( */
+        /*     (obj, flag) => ({ ...obj, [flag]: true }), */
+        /*     {} */
+        /* ); */
+        /* lastFeatureFlagFetch = new Date(); */
 
-        return cachedRemoteFeatureFlags;
+        /* return cachedRemoteFeatureFlags; */
     } catch (err) {
         console.error(`Error getting remote feature flags:`, err);
         return {};
