@@ -1,4 +1,7 @@
-# Unclutter - Immersive Reading Mode
+# Unclutterium - Immersive Reading Mode
+
+This is a fork of Unclutter, where I attempt to remove telemetry by default.
+Original README below.
 
 A new kind of reader mode to remove distractions from web articles.
 

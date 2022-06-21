@@ -1,8 +1,8 @@
 {
-    "name": "Unclutter - Ad blocker for Reading",
+    "name": "Unclutterium - Ad blocker for Reading with telemetry disabled",
     "version": "0.15.5",
     "description": "A new kind of reader mode to remove distractions, find popular quotes, outline pages & more.",
-    "homepage_url": "https://github.com/lindylearn/unclutter",
+    "homepage_url": "https://github.com/ejhusom/unclutter",
     "icons": {
         "128": "assets/icon.png"
     },

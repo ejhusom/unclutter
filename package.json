@@ -1,5 +1,5 @@
 {
-    "name": "unclutter",
+    "name": "unclutterium",
     "private": true,
     "dependencies": {
         "approx-string-match": "^2.0.0",
