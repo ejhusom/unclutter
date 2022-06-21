@@ -18,7 +18,7 @@
         }
     },
     "browser_action": {
-        "default_title": "Unclutter Current Article (Alt+C)"
+        "default_title": "Unclutter Current Article (Alt+R)"
     },
     "background": {
         "page": "background/firefox-page.html"
@@ -48,7 +48,7 @@
     "commands": {
         "_execute_browser_action": {
             "suggested_key": {
-                "default": "Alt+C"
+                "default": "Alt+R"
             }
         }
     }

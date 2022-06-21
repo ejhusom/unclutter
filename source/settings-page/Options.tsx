@@ -32,7 +32,7 @@ function OptionsPage({}) {
     const [keyboardShortcut, setKeyboardShortcut] = React.useState("");
     browser.runtime
         .getPlatformInfo()
-        .then(({ os }) => setKeyboardShortcut(os === "mac" ? "⌥+C" : "Alt+C"));
+        .then(({ os }) => setKeyboardShortcut(os === "mac" ? "⌥+C" : "Alt+R"));
 
     const keyboardShortcutsUrl =
         getBrowserType() === "chromium"
